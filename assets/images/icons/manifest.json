@@ -1,0 +1,14 @@
+{
+  "name": "Zihong Lu",
+  "short_name": "Zihong Lu",
+  "icons": [
+    {
+      "src": "./favicon.ico?v=2025",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "minimal-ui"
+}

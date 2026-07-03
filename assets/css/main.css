@@ -9938,6 +9938,20 @@ screen and (max-height: 300px) {
     background: linear-gradient(180deg, var(--zl-accent), var(--zl-accent-2));
 }
 
+.site-refresh .about-name-heading {
+    margin: -0.25em 0 0.85em;
+    color: #2f343b;
+    font-family: -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", Arial, sans-serif;
+    font-size: 2.2em;
+    font-weight: 500;
+    line-height: 1.18;
+    text-align: center;
+}
+
+.site-refresh .about-name-heading span {
+    color: #3f464f;
+}
+
 .site-refresh .page__content h1::after {
     content: "";
     position: absolute;
@@ -10240,11 +10254,17 @@ screen and (max-height: 300px) {
     }
 
     .site-refresh .page__title,
+    .site-refresh .about-name-heading,
     .site-refresh .page__content h1,
     .site-refresh .page__content p,
     .site-refresh .page__content li {
         width: 100%;
         max-width: 100%;
+    }
+
+    .site-refresh .about-name-heading {
+        margin-top: -0.15em;
+        font-size: 1.72em;
     }
 
     .site-refresh .page__content {

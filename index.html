@@ -230,8 +230,10 @@
                     src="https://img.shields.io/badge/IEEE-PDF-003C71?logo=ieee&logoColor=white" /></a>&nbsp;
                 <a href="https://www.bilibili.com/video/BV1bj99YgEeb"><img class="publication-badge"
                     src="https://img.shields.io/badge/Video-Bilibili-00A1D6" alt="Bilibili Video"></a>&nbsp;
-                <a href="https://github.com/Robotics-STAR-Lab/LA-Planner"><img class="publication-badge" alt="GitHub"
-                    src="https://img.shields.io/badge/GitHub-Code-181717?logo=github" /></a>
+                <a href="https://github.com/Robotics-STAR-Lab/LA-Planner"><img
+                    class="publication-badge github-stars-badge" alt="GitHub Code stars"
+                    data-github-repo="Robotics-STAR-Lab/LA-Planner" data-github-stars-badge
+                    src="https://img.shields.io/badge/GitHub%20Code-61%20stars-181717?logo=github" /></a>
               </li>
             </div>
           </div>
@@ -256,8 +258,10 @@
                     src="https://img.shields.io/badge/IEEE-PDF-003C71?logo=ieee&logoColor=white" /></a>&nbsp;
                 <a href="https://www.bilibili.com/video/BV1fN4y1N7pD"><img class="publication-badge"
                     src="https://img.shields.io/badge/Video-Bilibili-00A1D6" alt="Bilibili Video"></a>&nbsp;
-                <a href="https://github.com/jianzhuozhuTHU/MPC-D-CBF"><img class="publication-badge" alt="GitHub"
-                    src="https://img.shields.io/badge/GitHub-Code-181717?logo=github" /></a>
+                <a href="https://github.com/jianzhuozhuTHU/MPC-D-CBF"><img
+                    class="publication-badge github-stars-badge" alt="GitHub Code stars"
+                    data-github-repo="jianzhuozhuTHU/MPC-D-CBF" data-github-stars-badge
+                    src="https://img.shields.io/badge/GitHub%20Code-301%20stars-181717?logo=github" /></a>
               </li>
             </div>
           </div>
@@ -280,8 +284,9 @@
                     src="https://img.shields.io/badge/IEEE-PDF-003C71?logo=ieee&logoColor=white" /></a>&nbsp;
                 <a href="https://www.bilibili.com/video/BV1bZ4y1r7na"><img class="publication-badge"
                     src="https://img.shields.io/badge/Video-Bilibili-00A1D6" alt="Bilibili Video"></a>&nbsp;
-                <a href="https://github.com/jianzhuozhuTHU/putn"><img class="publication-badge" alt="GitHub"
-                    src="https://img.shields.io/badge/GitHub-Code-181717?logo=github" /></a>
+                <a href="https://github.com/jianzhuozhuTHU/putn"><img class="publication-badge github-stars-badge"
+                    alt="GitHub Code stars" data-github-repo="jianzhuozhuTHU/putn" data-github-stars-badge
+                    src="https://img.shields.io/badge/GitHub%20Code-417%20stars-181717?logo=github" /></a>
               </li>
             </div>
           </div>
@@ -330,6 +335,40 @@
     </article>
 
   </div>
+
+  <script>
+    (function () {
+      function formatStars(count) {
+        return count.toLocaleString('en-US') + ' stars';
+      }
+
+      function setStarsBadge(img, text) {
+        img.src = 'https://img.shields.io/badge/GitHub%20Code-' + encodeURIComponent(text) +
+          '-181717?logo=github';
+      }
+
+      document.querySelectorAll('[data-github-stars-badge]').forEach(function (badge) {
+        var repo = badge.getAttribute('data-github-repo');
+        if (!repo) {
+          return;
+        }
+
+        fetch('https://api.github.com/repos/' + repo)
+          .then(function (response) {
+            if (!response.ok) {
+              throw new Error('GitHub API error');
+            }
+            return response.json();
+          })
+          .then(function (data) {
+            if (typeof data.stargazers_count === 'number') {
+              setStarsBadge(badge, formatStars(data.stargazers_count));
+            }
+          })
+          .catch(function () {});
+      });
+    }());
+  </script>
 
 </body>
 

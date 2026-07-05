@@ -10154,6 +10154,10 @@ screen and (max-height: 300px) {
     border-radius: 3px;
 }
 
+.site-refresh .github-stars-badge {
+    min-width: 124px;
+}
+
 .site-refresh #selected-awards + ul,
 .site-refresh #services + ul,
 .site-refresh #experience + ul {
